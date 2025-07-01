@@ -25,7 +25,8 @@ signals:
     void batteryChanged(int battery);
     void batteryVoltageChanged(int batteryVoltage);
     void speedChanged(int speed);
-    void assistanceChanged(int assistance);
+    void powerChanged(int power);
+    void distanceChanged(int distance);
 
 public slots:
     void onPropertiesChanged(const QString &interface, const QVariantMap &map, const QStringList &list);

@@ -23,7 +23,7 @@ void SettingsService::readSpeed()
 
 void SettingsService::setLightsState(bool on)
 {
-    QByteArray packet = {0};
+    QByteArray packet;
     packet[0] = 10;
     packet[1] = 16;
     packet[2] = 0;

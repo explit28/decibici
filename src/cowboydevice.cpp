@@ -81,13 +81,13 @@ void CowboyDevice::parseServices()
                 connect(service, &OnOffService::batteryChanged, this, &CowboyDevice::batteryChanged);
                 connect(service, &OnOffService::batteryVoltageChanged, this, &CowboyDevice::batteryVoltageChanged);
                 connect(service, &OnOffService::speedChanged, this, &CowboyDevice::speedChanged);
-                connect(service, &OnOffService::assistanceChanged, this, &CowboyDevice::assistanceChanged);
+                connect(service, &OnOffService::powerChanged, this, &CowboyDevice::powerChanged);
+                connect(service, &OnOffService::distanceChanged, this, &CowboyDevice::distanceChanged);
                 addService(uuid, service);
                 service->readLockState();
             } else if (uuid == SettingsService::UUID_SERVICE) {
                 auto service = new SettingsService(uuid, path, this);
                 addService(uuid, service);
-                service->readSpeed();
             } else {
                 addService(uuid, new QBLEService(uuid, path, this));
             }

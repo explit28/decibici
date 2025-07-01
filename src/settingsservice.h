@@ -10,7 +10,6 @@ public:
     explicit SettingsService(const QString &uuid, const QString &path, QObject *parent = nullptr);
 
     static const char *UUID_SERVICE;
-    static const char *UUID_DASHBOARD_CHARACTERISTIC;
     static const char *UUID_READ_CHARACTERISTIC;
     static const char *UUID_WRITE_CHARACTERISTIC;
 

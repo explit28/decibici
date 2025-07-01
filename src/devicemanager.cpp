@@ -17,7 +17,8 @@ DeviceManager::DeviceManager(QObject *parent) : QObject(parent)
     connect(&_device, &CowboyDevice::batteryChanged, this, &DeviceManager::batteryChanged);
     connect(&_device, &CowboyDevice::batteryVoltageChanged, this, &DeviceManager::batteryVoltageChanged);
     connect(&_device, &CowboyDevice::speedChanged, this, &DeviceManager::speedChanged);
-    connect(&_device, &CowboyDevice::assistanceChanged, this, &DeviceManager::assistanceChanged);
+    connect(&_device, &CowboyDevice::powerChanged, this, &DeviceManager::powerChanged);
+    connect(&_device, &CowboyDevice::distanceChanged, this, &DeviceManager::distanceChanged);
 }
 
 bool DeviceManager::getDevicePaired()
@@ -119,7 +120,7 @@ int DeviceManager::getSpeed() const
     return static_cast<OnOffService*>(service)->getSpeed();
 }
 
-int DeviceManager::getAssistance() const
+int DeviceManager::getPower() const
 {
     if (!_device.connected()) return false;
 
@@ -127,7 +128,18 @@ int DeviceManager::getAssistance() const
 
     if (service == nullptr) return false;
 
-    return static_cast<OnOffService*>(service)->getAssistance();
+    return static_cast<OnOffService*>(service)->getPower();
+}
+
+int DeviceManager::getDistance() const
+{
+    if (!_device.connected()) return false;
+
+    auto service = _device.service(OnOffService::UUID_SERVICE);
+
+    if (service == nullptr) return false;
+
+    return static_cast<OnOffService*>(service)->getDistance();
 }
 
 void DeviceManager::connectToDevice()

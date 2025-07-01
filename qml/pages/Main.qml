@@ -30,66 +30,104 @@ Page {
             title: deviceManager.devicePaired ? (deviceManager.deviceConnected ? (deviceManager.servicesRegistered ? qsTr("Device connected") : qsTr("Registering services")) : qsTr("Device found")) : qsTr("Device not paired")
         }
 
-        TextSwitch {
-            id: onButton
-
-            anchors.horizontalCenter: parent.horizontalCenter
+        Row {
+            id: switchRow
+            width: parent.width
             anchors.top: header.bottom
             anchors.topMargin: Theme.paddingMedium
-            checked: deviceManager.locked
-            enabled: deviceManager.servicesRegistered
 
-            text: deviceManager.locked ? qsTr("Locked") : qsTr("Unlocked")
-            onClicked: deviceManager.locked = !deviceManager.locked
+            Switch {
+                id: onButton
+                anchors.verticalCenter: parent.verticalCenter
+                width: parent.width/2
+                checked: deviceManager.locked
+                enabled: deviceManager.servicesRegistered
+
+                icon.source: "image://theme/icon-m-device-lock"
+                onClicked: deviceManager.locked = !deviceManager.locked
+            }
+
+            Switch {
+                id: lightsButton
+                anchors.verticalCenter: parent.verticalCenter
+                width: parent.width/2
+                checked: deviceManager.lights
+                enabled: deviceManager.servicesRegistered
+
+                icon.source: "image://theme/icon-m-flashlight"
+                onClicked: deviceManager.lights = !deviceManager.lights
+            }
         }
 
-        TextSwitch {
-            id: lightsButton
+        Row {
+            id: iconsRow
+            width: parent.width
+            anchors.top: switchRow.bottom
+            anchors.topMargin: Theme.paddingLarge*3
 
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: onButton.bottom
-            anchors.topMargin: Theme.paddingMedium
-            checked: deviceManager.lights
-            enabled: deviceManager.servicesRegistered
+            Column {
+                width: parent.width/4
+                Icon {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    source: "image://theme/icon-m-battery"
+                }
 
-            text: deviceManager.lights ? qsTr("Lights on") : qsTr("Lights off")
-            onClicked: deviceManager.lights = !deviceManager.lights
+                Label {
+                    text: deviceManager.battery + "%"
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
+
+            Column {
+                width: parent.width/4
+                Icon {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    source: "image://theme/icon-m-diagnostic"
+                }
+
+                Label {
+                    text: deviceManager.batteryVoltage/1000 + " V"
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
+
+            Column {
+                width: parent.width/4
+                Icon {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    source: "image://theme/icon-m-toy"
+                }
+
+                Label {
+                    text: deviceManager.speed + " km/h"
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
+
+            Column {
+                width: parent.width/4
+                Icon {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    source: "image://theme/icon-m-gps"
+                }
+
+                Label {
+                    text: deviceManager.distance + " m"
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+            }
         }
 
-        Label {
-            id: batteryLabel
-            text: qsTr("Battery %1%").arg(deviceManager.battery)
-
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: lightsButton.bottom
-            anchors.topMargin: Theme.paddingMedium
-        }
-
-        Label {
-            id: batteryVoltageLabel
-            text: qsTr("Battery voltage %1V").arg(deviceManager.batteryVoltage/1000)
-
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: batteryLabel.bottom
-            anchors.topMargin: Theme.paddingMedium
-        }
-
-        Label {
-            id: speedLabel
-            text: qsTr("Speed %1km/h").arg(deviceManager.speed)
-
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: batteryVoltageLabel.bottom
-            anchors.topMargin: Theme.paddingMedium
-        }
-
-        Label {
-            id: assistanceLabel
-            text: qsTr("Assistance %1%").arg(deviceManager.assistance)
-
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: speedLabel.bottom
-            anchors.topMargin: Theme.paddingMedium
+        Slider {
+            width: parent.width
+            anchors.top: iconsRow.bottom
+            anchors.topMargin: Theme.paddingLarge*3
+            leftMargin: Theme.paddingLarge*3
+            rightMargin: Theme.paddingLarge*3
+            minimumValue: 0
+            maximumValue: 100
+            value: deviceManager.power
+            label: qsTr("Assistance")
         }
     }
 }

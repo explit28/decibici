@@ -23,13 +23,13 @@ CoverBackground {
         id: coverAction
 
         CoverAction {
-            iconSource: "image://theme/icon-s-outline-secure"
-            onTriggered: deviceManager.setState(false)
+            iconSource: deviceManager.locked ? "image://theme/icon-s-secure" : "image://theme/icon-s-outline-secure"
+            onTriggered: deviceManager.locked = !deviceManager.locked
         }
 
         CoverAction {
-            iconSource: "image://theme/icon-s-secure"
-            onTriggered: deviceManager.setState(true)
+            iconSource: deviceManager.lights ? "image://theme/icon-m-day" : "image://theme/icon-m-do-not-disturb"
+            onTriggered: deviceManager.lights = !deviceManager.lights
         }
     }
 }

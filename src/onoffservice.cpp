@@ -54,9 +54,14 @@ int OnOffService::getSpeed() const
     return _dashboard.speed;
 }
 
-int OnOffService::getAssistance() const
+int OnOffService::getDistance() const
 {
-    return _dashboard.assistance;
+    return _dashboard.distance;
+}
+
+int OnOffService::getPower() const
+{
+    return _dashboard.power;
 }
 
 void OnOffService::onCharacteristicChanged(const QString &c, const QByteArray &value)
@@ -114,11 +119,13 @@ void OnOffService::onCharacteristicChanged(const QString &c, const QByteArray &v
         if (dashboard.get<4>().has_value()) {
             _dashboard.power = dashboard.get<4>().value();
             qDebug() << "power: " << _dashboard.power;
+            emit powerChanged(_dashboard.power);
         }
 
         if (dashboard.get<5>().has_value()) {
             _dashboard.distance = dashboard.get<5>().value();
             qDebug() << "distance: " << _dashboard.distance;
+            emit distanceChanged(_dashboard.distance);
         }
 
         if (dashboard.get<6>().has_value()) {
@@ -130,7 +137,6 @@ void OnOffService::onCharacteristicChanged(const QString &c, const QByteArray &v
         if (dashboard.get<7>().has_value()) {
             _dashboard.assistance = dashboard.get<7>().value();
             qDebug() << "assistance: " << _dashboard.assistance;
-            emit assistanceChanged(_dashboard.assistance);
         }
 
         if (dashboard.get<8>().has_value()) {

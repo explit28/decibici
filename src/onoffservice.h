@@ -21,7 +21,8 @@ public:
     int getBattery() const;
     int getBatteryVoltage() const;
     int getSpeed() const;
-    int getAssistance() const;
+    int getDistance() const;
+    int getPower() const;
 
 signals:
     void stateChanged(bool state);
@@ -29,7 +30,8 @@ signals:
     void batteryChanged(int battery);
     void batteryVoltageChanged(int batteryVoltage);
     void speedChanged(int speed);
-    void assistanceChanged(int assistance);
+    void powerChanged(int power);
+    void distanceChanged(int distance);
 
 public slots:
     void onCharacteristicChanged(const QString &c, const QByteArray &value);

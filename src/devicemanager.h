@@ -18,7 +18,8 @@ class DeviceManager : public QObject
     Q_PROPERTY(int battery READ getBattery NOTIFY batteryChanged)
     Q_PROPERTY(int batteryVoltage READ getBatteryVoltage NOTIFY batteryVoltageChanged)
     Q_PROPERTY(int speed READ getSpeed NOTIFY speedChanged)
-    Q_PROPERTY(int assistance READ getAssistance NOTIFY assistanceChanged)
+    Q_PROPERTY(int distance READ getDistance NOTIFY distanceChanged)
+    Q_PROPERTY(int power READ getPower NOTIFY powerChanged)
 public:
     explicit DeviceManager(QObject *parent = nullptr);
 
@@ -35,7 +36,8 @@ public:
     int getBattery() const;
     int getBatteryVoltage() const;
     int getSpeed() const;
-    int getAssistance() const;
+    int getPower() const;
+    int getDistance() const;
 
     Q_INVOKABLE void connectToDevice();
 
@@ -46,7 +48,8 @@ signals:
     void batteryChanged(int battery);
     void batteryVoltageChanged(int batteryVoltage);
     void speedChanged(int speed);
-    void assistanceChanged(int assistance);
+    void distanceChanged(int distance);
+    void powerChanged(int power);
 
 private:
     BluezAdapter _adapter;
