@@ -70,6 +70,8 @@ Page {
                 Icon {
                     anchors.horizontalCenter: parent.horizontalCenter
                     source: "image://theme/icon-m-battery"
+                    width: Theme.iconSizeMedium
+                    height: Theme.iconSizeMedium
                 }
 
                 Label {
@@ -82,7 +84,9 @@ Page {
                 width: parent.width/4
                 Icon {
                     anchors.horizontalCenter: parent.horizontalCenter
-                    source: "image://theme/icon-m-diagnostic"
+                    source: "qrc:///icons/icon-m-voltage.svg"
+                    width: Theme.iconSizeMedium
+                    height: Theme.iconSizeMedium
                 }
 
                 Label {
@@ -95,7 +99,9 @@ Page {
                 width: parent.width/4
                 Icon {
                     anchors.horizontalCenter: parent.horizontalCenter
-                    source: "image://theme/icon-m-toy"
+                    source: "qrc:///icons/icon-m-speed.svg"
+                    width: Theme.iconSizeMedium
+                    height: Theme.iconSizeMedium
                 }
 
                 Label {
@@ -108,7 +114,9 @@ Page {
                 width: parent.width/4
                 Icon {
                     anchors.horizontalCenter: parent.horizontalCenter
-                    source: "image://theme/icon-m-gps"
+                    source: "qrc:///icons/icon-m-distance.svg"
+                    width: Theme.iconSizeMedium
+                    height: Theme.iconSizeMedium
                 }
 
                 Label {

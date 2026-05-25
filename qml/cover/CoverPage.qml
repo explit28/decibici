@@ -23,12 +23,12 @@ CoverBackground {
         id: coverAction
 
         CoverAction {
-            iconSource: deviceManager.locked ? "image://theme/icon-s-secure" : "image://theme/icon-s-outline-secure"
+            iconSource: deviceManager.locked ? "../resources/icons/icon-cover-locked.svg" : "../resources/icons/icon-cover-unlocked.svg"
             onTriggered: deviceManager.locked = !deviceManager.locked
         }
 
         CoverAction {
-            iconSource: deviceManager.lights ? "image://theme/icon-m-day" : "image://theme/icon-m-do-not-disturb"
+            iconSource: deviceManager.lights ? "../resources/icons/icon-cover-light-off.svg" : "../resources/icons/icon-cover-light-on.svg"
             onTriggered: deviceManager.lights = !deviceManager.lights
         }
     }

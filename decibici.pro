@@ -16,6 +16,7 @@ DISTFILES += qml/decibici.qml \
     qml/cover/CoverPage.qml \
     qml/pages/Main.qml \
     qml/pages/About.qml \
+    qml/resources/icons.qrc \
     rpm/decibici.spec \
     translations/*.ts \
     decibici.desktop
@@ -23,6 +24,9 @@ DISTFILES += qml/decibici.qml \
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
 CONFIG += sailfishapp_i18n
+
+RESOURCES += \
+    qml/resources/icons.qrc \
 
 HEADERS += \
     src/cowboydevice.h \

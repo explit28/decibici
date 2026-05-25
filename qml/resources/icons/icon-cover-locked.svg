@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="icon-lock-locked">
+        <rect id="icon-lock-locked_1_" x="0" y="0" width="32" height="32" style="fill:white;fill-opacity:0;"/>
+        <g>
+            <path d="M16,0C10.456,0 5.96,4.24 5.96,9.892L5.92,12.667L9.931,12.667L9.971,9.892C9.971,5.653 12.675,3.945 16,3.945C19.325,3.945 22.028,5.653 22.028,9.892L21.988,12.667L26,12.667L26.04,9.892C26.04,4.24 21.544,0 16,0Z" style="fill:white;fill-rule:nonzero;"/>
+            <g>
+                <path d="M26,12.667L6,12.667C4.166,12.667 2.667,14.12 2.667,15.897L2.667,28.771C2.667,30.547 4.166,32 6,32L26,32C27.834,32 29.333,30.547 29.333,28.77L29.333,15.896C29.333,14.12 27.834,12.667 26,12.667ZM16.875,22.963L16.875,26.936C16.875,27.404 16.484,27.784 16,27.784C15.516,27.784 15.125,27.404 15.125,26.936L15.125,22.963C14.05,22.608 13.272,21.633 13.272,20.472C13.272,19.013 14.493,17.829 15.999,17.829C17.505,17.829 18.726,19.012 18.726,20.472C18.727,21.633 17.95,22.609 16.875,22.963Z" style="fill:white;fill-opacity:0.6;fill-rule:nonzero;"/>
+            </g>
+        </g>
+    </g>
+</svg>

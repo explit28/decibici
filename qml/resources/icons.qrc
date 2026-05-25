@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/icon-m-distance.svg</file>
+        <file>icons/icon-m-speed.svg</file>
+        <file>icons/icon-m-voltage.svg</file>
+        <file>icons/icon-cover-light-off.svg</file>
+        <file>icons/icon-cover-light-on.svg</file>
+        <file>icons/icon-cover-locked.svg</file>
+        <file>icons/icon-cover-unlocked.svg</file>
+        <file>icons/icon-cover-light-off.png</file>
+        <file>icons/icon-cover-light-on.png</file>
+        <file>icons/icon-cover-locked.png</file>
+        <file>icons/icon-cover-unlocked.png</file>
+    </qresource>
+</RCC>

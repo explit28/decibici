@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="icon-cover-people_2_">
+        <rect id="icon-cover-people_3_" x="0" y="0" width="32" height="32" style="fill:white;fill-opacity:0;"/>
+        <g transform="matrix(-0.309012,-0,0,-0.309012,20.944339,34.515702)">
+            <path d="M16,15.384C8.851,15.384 3.056,21.18 3.056,28.329L3.056,40.502375L28.945,40.502375L28.945,28.329C28.944,21.179 23.149,15.384 16,15.384Z" style="fill:white;fill-opacity:0.4;fill-rule:nonzero;"/>
+        </g>
+        <g transform="matrix(1.346788,0,0,1.346788,-5.548615,-0.347925)">
+            <circle cx="16" cy="9.272" r="8.064" style="fill:white;"/>
+        </g>
+        <path d="M22,21L22,23.005859367549C22.000004472881,23.534735765806 21.78991268386,24.041952380897 21.415942734911,24.415926607197C21.041972785963,24.789900833496 20.534758573856,24.999998423855 20.005882175582,25.000000000062C17.784759544759,25 14.215240513838,25 11.994117866133,25C11.465241460648,24.999998434856 10.95802723784,24.789900849388 10.584057279881,24.415926621901C10.210087321922,24.041952394414 9.999995527182,23.534735773017 10.000000000063,23.005859367549C10,22.003910064697 10,21 10,21L22,21Z" style="fill:white;"/>
+    </g>
+</svg>
